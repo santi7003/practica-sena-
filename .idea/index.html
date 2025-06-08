@@ -1,0 +1,435 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Plataformas Git: GitHub, GitLab & Bitbucket</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: 300;
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .platform-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .platform-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .platform-icon {
+            font-size: 3em;
+            margin-right: 15px;
+        }
+
+        .platform-title {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .github-card { border-left: 5px solid #333; }
+        .gitlab-card { border-left: 5px solid #FC6D26; }
+        .bitbucket-card { border-left: 5px solid #0052CC; }
+
+        .feature-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .feature-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .pros, .cons {
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .pros {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border-left: 4px solid #28a745;
+        }
+
+        .cons {
+            background: linear-gradient(135deg, #f8d7da, #f1aeb5);
+            border-left: 4px solid #dc3545;
+        }
+
+        .comparison-table {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .cta-section {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🚀 Plataformas de Control de Versiones</h1>
+        <p class="subtitle">Comparativa completa entre GitHub, GitLab y Bitbucket</p>
+    </header>
+
+    <div class="platforms-grid">
+        <!-- GitHub Card -->
+        <div class="platform-card github-card">
+            <div class="platform-header">
+                <div class="platform-icon">🐙</div>
+                <div class="platform-title">GitHub</div>
+            </div>
+            <p><strong>La plataforma más popular del mundo para desarrollo colaborativo</strong></p>
+
+            <h4>🌟 Características principales:</h4>
+            <ul class="feature-list">
+                <li>Repositorios públicos y privados ilimitados</li>
+                <li>GitHub Actions para CI/CD</li>
+                <li>GitHub Pages para hosting gratuito</li>
+                <li>Herramientas de colaboración avanzadas</li>
+                <li>Marketplace con miles de integraciones</li>
+                <li>GitHub Copilot (IA para programación)</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h5>✅ Ventajas</h5>
+                    <ul>
+                        <li>Mayor comunidad</li>
+                        <li>Excelente para open source</li>
+                        <li>Interfaz intuitiva</li>
+                        <li>Integración perfecta</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h5>❌ Desventajas</h5>
+                    <ul>
+                        <li>Planes pagos costosos</li>
+                        <li>Menos funciones CI/CD nativas</li>
+                        <li>Dependencia de Microsoft</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- GitLab Card -->
+        <div class="platform-card gitlab-card">
+            <div class="platform-header">
+                <div class="platform-icon">🦊</div>
+                <div class="platform-title">GitLab</div>
+            </div>
+            <p><strong>Plataforma DevOps completa con CI/CD integrado</strong></p>
+
+            <h4>🌟 Características principales:</h4>
+            <ul class="feature-list">
+                <li>CI/CD integrado y potente</li>
+                <li>Repositorios privados ilimitados gratis</li>
+                <li>Issue tracking avanzado</li>
+                <li>Auto DevOps</li>
+                <li>Container Registry incluido</li>
+                <li>Opciones self-hosted</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h5>✅ Ventajas</h5>
+                    <ul>
+                        <li>CI/CD superior</li>
+                        <li>Plataforma todo-en-uno</li>
+                        <li>Plan gratuito generoso</li>
+                        <li>Self-hosting disponible</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h5>❌ Desventajas</h5>
+                    <ul>
+                        <li>Interfaz más compleja</li>
+                        <li>Menor comunidad</li>
+                        <li>Curva de aprendizaje</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bitbucket Card -->
+        <div class="platform-card bitbucket-card">
+            <div class="platform-header">
+                <div class="platform-icon">🪣</div>
+                <div class="platform-title">Bitbucket</div>
+            </div>
+            <p><strong>Integración perfecta con el ecosistema Atlassian</strong></p>
+
+            <h4>🌟 Características principales:</h4>
+            <ul class="feature-list">
+                <li>Integración con Jira y Confluence</li>
+                <li>Bitbucket Pipelines para CI/CD</li>
+                <li>Repositorios privados gratuitos (hasta 5 usuarios)</li>
+                <li>Pull requests con código inline</li>
+                <li>Branching model flexible</li>
+                <li>Deployment automático</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h5>✅ Ventajas</h5>
+                    <ul>
+                        <li>Excelente integración Atlassian</li>
+                        <li>Ideal para equipos pequeños</li>
+                        <li>Pipelines sencillos</li>
+                        <li>Soporte Git y Mercurial</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h5>❌ Desventajas</h5>
+                    <ul>
+                        <li>Menos popular</li>
+                        <li>Funciones limitadas gratis</li>
+                        <li>Comunidad más pequeña</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="comparison-table">
+        <h2>📊 Comparativa Rápida</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Característica</th>
+                <th>🐙 GitHub</th>
+                <th>🦊 GitLab</th>
+                <th>🪣 Bitbucket</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>Repositorios privados gratis</strong></td>
+                <td>✅ Ilimitados</td>
+                <td>✅ Ilimitados</td>
+                <td>✅ Hasta 5 usuarios</td>
+            </tr>
+            <tr>
+                <td><strong>CI/CD integrado</strong></td>
+                <td>🔶 GitHub Actions</td>
+                <td>✅ Excelente</td>
+                <td>🔶 Bitbucket Pipelines</td>
+            </tr>
+            <tr>
+                <td><strong>Comunidad</strong></td>
+                <td>✅ La más grande</td>
+                <td>🔶 Creciente</td>
+                <td>❌ Pequeña</td>
+            </tr>
+            <tr>
+                <td><strong>Facilidad de uso</strong></td>
+                <td>✅ Muy fácil</td>
+                <td>🔶 Moderada</td>
+                <td>✅ Fácil</td>
+            </tr>
+            <tr>
+                <td><strong>Precio</strong></td>
+                <td>🔶 Medio-Alto</td>
+                <td>✅ Competitivo</td>
+                <td>✅ Económico</td>
+            </tr>
+            <tr>
+                <td><strong>Integraciones</strong></td>
+                <td>✅ Miles disponibles</td>
+                <td>🔶 Buenas opciones</td>
+                <td>✅ Atlassian perfecto</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cta-section">
+        <h2>🎯 ¿Cuál elegir?</h2>
+        <p>La elección depende de tus necesidades:</p>
+        <br>
+        <p><strong>🐙 Elige GitHub si:</strong> Quieres la mayor comunidad, contribuir a open source, o necesitas las mejores integraciones.</p>
+        <p><strong>🦊 Elige GitLab si:</strong> Priorizas CI/CD avanzado, quieres una plataforma DevOps completa, o necesitas self-hosting.</p>
+        <p><strong>🪣 Elige Bitbucket si:</strong> Ya usas herramientas Atlassian, tienes un equipo pequeño, o buscas una opción económica.</p>
+
+        <div style="margin-top: 30px;">
+            <a href="https://github.com" class="cta-button" target="_blank">Visitar GitHub 🐙</a>
+            <a href="https://gitlab.com" class="cta-button" target="_blank">Visitar GitLab 🦊</a>
+            <a href="https://bitbucket.org" class="cta-button" target="_blank">Visitar Bitbucket 🪣</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Animación suave al hacer scroll
+    window.addEventListener('scroll', () => {
+        const cards = document.querySelectorAll('.platform-card');
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    // Efecto hover dinámico en las tarjetas
+    document.querySelectorAll('.platform-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Mostrar mensaje de bienvenida
+    setTimeout(() => {
+        console.log('🚀 ¡Bienvenido a la comparativa de plataformas Git! 🚀');
+        console.log('💡 Tip: Cada plataforma tiene sus fortalezas. ¡Explora y encuentra la perfecta para ti!');
+    }, 1000);
+</script>
+</body>
+</html>
